@@ -1,6 +1,9 @@
 name: test-workflow-action
 
-on: [push]
+on: 
+  push:
+    branches:
+      - master
 
 jobs:
   test-express-application:
@@ -13,9 +16,9 @@ jobs:
       - name: Setting up node environment
         uses: actions/setup@v3
         with: 
-          node-version: '18'
+          node-version: '14'
 
-      - name: Installing Dependencies
+      - name: Installing dependencies
       - run: npm i
 
       - name: Running test

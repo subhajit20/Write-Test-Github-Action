@@ -7,8 +7,7 @@ on:
 
 jobs:
   test-express-application:
-
-    runs-on: Ubuntu-latest
+    runs-on: ubuntu-latest
     steps:
       - name: Starting test workflow
         uses: actions/checkout@v3

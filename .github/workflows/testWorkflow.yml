@@ -1,15 +1,11 @@
-name: test-workflow-action # Workflow name (optional)
+name: test-workflow-action
 
-on: 
-  push: # This is event
-    branches:
-      - master
+on: [push]
 
-# Declaring job
 jobs:
-  test-express-application: # Job Name
+  test-express-application:
 
-    runs-on: Ubuntu-latest # configuring new ubuntu vertual machine given by github itself
+    runs-on: Ubuntu-latest
     steps:
       - name: Starting test workflow
         uses: actions/checkout@v3
@@ -19,32 +15,8 @@ jobs:
         with: 
           node-version: '18'
 
-      - name: Installing typescript
-        run: npm install g typescript
-      - run: npx tsc --init
+      - name: Installing Dependencies
       - run: npm i
 
       - name: Running test
         run: npm test
-
-  starting-server:
-      runs-on: Ubuntu-latest
-
-      steps:
-        - name: Starting dev workflow
-          uses: actions/checkout@v3
-
-        - name: Setting up node environment
-          uses: actions/setup@v3
-          with: 
-            node-version: '18'
-    
-        - name: Installing typescript
-          run: npm install g typescript
-        - run: npx tsc --init
-
-        - name: Install dependencies
-          run: npm i
-
-        - name: Starting server
-          run: npm run dev

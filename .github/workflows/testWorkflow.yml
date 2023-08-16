@@ -9,16 +9,11 @@ jobs:
   test-express-application:
     runs-on: ubuntu-latest
     steps:
-      - name: Starting test workflow
-        uses: actions/checkout@v3
+      - uses: actions/checkout@v3
 
-      - name: Setting up node environment
-        uses: actions/setup@v3
+      - uses: actions/setup-node@v3
         with: 
-          node-version: '14'
+          node-version: '18'
 
-      - name: Installing dependencies
-        run: npm i
-
-      - name: Running test
-        run: npm test
+      - run: npm i
+      - run: npm test

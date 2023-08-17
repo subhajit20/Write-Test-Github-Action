@@ -10,15 +10,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-
-      - name: Setting up node environment
-        uses: actions/setup-node@v3
+      - uses: actions/setup-node@v3
         with: 
           node-version: '18'
 
+      - run: ls -a
       - run: npm i
-
-      - name: Testing the application
-        run: npm test
-
-      - name: Ending this job
+      - run: npm test

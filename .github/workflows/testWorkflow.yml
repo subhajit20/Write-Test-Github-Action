@@ -15,12 +15,16 @@ jobs:
         with: 
           node-version: '18'
 
-      - run: npm i
-      - run: npm test
+      - name: Installing Dependencies
+        run: npm i
+
+      - name: Testing the application
+        run: npm test
   test-starting-server:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - name: Checking the node version
+        uses: actions/checkout@v3
 
       - name: Setting up node js and typescript environment
         uses: actions/setup-node@v3
@@ -28,4 +32,4 @@ jobs:
           node-version: '18'
       
       - name: Starting the server
-        run: npm run dev
+        run: npm run start

@@ -20,13 +20,12 @@ jobs:
   test-starting-server:
     runs-on: ubuntu-latest
     steps:
-      - name: Checking version
       - uses: actions/checkout@v3
 
       - name: Setting up node js and typescript environment
-      - uses: actions/setup-node@v3
+        uses: actions/setup-node@v3
         with: 
           node-version: '18'
       
       - name: Starting the server
-      - run: npm run dev
+        run: npm run dev

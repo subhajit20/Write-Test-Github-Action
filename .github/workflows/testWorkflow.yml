@@ -18,4 +18,6 @@ jobs:
 
       - name: Installing dependencies
         run: npm i
-      - run: npm test
+
+      - name: Started testing application
+        run: npm test

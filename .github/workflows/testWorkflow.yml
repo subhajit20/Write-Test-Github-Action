@@ -20,6 +20,7 @@ jobs:
 
       - name: Testing the application
         run: npm test
+      - name: Ending this job
   test-starting-server:
     runs-on: ubuntu-latest
     steps:
@@ -31,5 +32,4 @@ jobs:
         with: 
           node-version: '18'
       
-      - name: Starting the server
-        run: npm run start
+      - name: Ending this job

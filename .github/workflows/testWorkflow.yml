@@ -14,7 +14,8 @@ jobs:
         with: 
           node-version: '18'
 
-      - run: ls -a
+      - name: Testing linux command
+        run: ls -a
 
       - name: Installing dependencies
         run: npm i
